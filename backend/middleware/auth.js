@@ -14,7 +14,12 @@ const auth = (req, res, next) => {
       token,
       process.env.JWT_SECRET || "your-secret-key"
     );
-    req.user = verified;
+
+    // Set user ID from the token payload
+    req.user = {
+      _id: verified.userId || verified._id, // Use _id consistently
+    };
+
     next();
   } catch (error) {
     res
