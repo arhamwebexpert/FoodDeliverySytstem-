@@ -5,6 +5,23 @@ import auth from "../middleware/auth.js";
 
 const router = express.Router();
 
+// Get latest order
+router.get("/latest", auth, async (req, res) => {
+  try {
+    const order = await Order.findOne({ user: req.user._id })
+      .sort({ createdAt: -1 })
+      .populate("items.product");
+
+    if (!order) {
+      return res.status(404).json({ message: "No orders found" });
+    }
+
+    res.json(order);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
 // Create a new order
 router.post("/", auth, async (req, res) => {
   try {

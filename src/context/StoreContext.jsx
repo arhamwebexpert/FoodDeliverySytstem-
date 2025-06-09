@@ -140,6 +140,35 @@ const StoreContextProvider = ({ children }) => {
         }
     };
 
+    const clearCart = async () => {
+        try {
+            const token = localStorage.getItem('token');
+            if (!token) {
+                throw new Error('Please log in to clear cart');
+            }
+
+            const response = await fetch('http://localhost:5000/api/cart/clear', {
+                method: 'DELETE',
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+
+            if (!response.ok) {
+                if (response.status === 401) {
+                    localStorage.removeItem('token');
+                    throw new Error('Please log in again');
+                }
+                throw new Error('Failed to clear cart');
+            }
+
+            setCartItems({});
+        } catch (err) {
+            console.error('Error clearing cart:', err);
+            alert(err.message);
+        }
+    };
+
     const getTotalCartAmount = () => {
         let totalAmount = 0;
         for (const item in cartItems) {
@@ -159,6 +188,7 @@ const StoreContextProvider = ({ children }) => {
         setCartItems,
         addToCart,
         removeFromCart,
+        clearCart,
         getTotalCartAmount,
         loading,
         error,

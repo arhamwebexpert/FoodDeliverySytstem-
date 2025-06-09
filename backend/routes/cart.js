@@ -106,7 +106,7 @@ router.delete("/remove/:productId", auth, async (req, res) => {
   } catch (error) {
     res
       .status(500)
-      .json({ message: "Error removing from cart", error: error.message });
+      .json({ message: "Error removing item from cart", error: error.message });
   }
 });
 
@@ -120,6 +120,7 @@ router.delete("/clear", auth, async (req, res) => {
     }
 
     cart.items = [];
+    cart.total = 0;
     await cart.save();
 
     res.json({ message: "Cart cleared successfully" });

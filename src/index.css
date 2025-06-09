@@ -4,17 +4,48 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: Outfit;
+  font-family: 'Poppins', sans-serif;
   scroll-behavior: smooth;
 }
 
 body{
+  padding-top: 80px;
+  background-color: #f8f9fa;
+  color: #1a1a1a;
   min-height: 100vh;
 }
 
 a{
   text-decoration: none;
   color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff6b6b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff5252;
 }
 
 .app{
