@@ -21,10 +21,7 @@ A modern food delivery web application built with React and Node.js, featuring a
 - Cart preview on hover
 - Order placement with delivery details
 
-### Order Tracking
-- Real-time order status updates
-- Order preparation progress tracking
-- Order history for logged-in users
+### Order Display
 - Latest order status display
 - Order details view
 
