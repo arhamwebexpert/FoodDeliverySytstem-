@@ -10,9 +10,15 @@
 
 body{
   padding-top: 80px;
-  background-color: #f8f9fa;
   color: #1a1a1a;
   min-height: 100vh;
+  background-color: #fdf8f4;
+  background-image:
+    radial-gradient(ellipse at 10% 10%, rgba(255, 107, 107, 0.18) 0px, transparent 55%),
+    radial-gradient(ellipse at 90% 5%,  rgba(255, 180, 80,  0.14) 0px, transparent 50%),
+    radial-gradient(ellipse at 80% 90%, rgba(255, 100, 60,  0.12) 0px, transparent 50%),
+    radial-gradient(ellipse at 5%  85%, rgba(255, 210, 150, 0.15) 0px, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(255, 240, 220, 0.4)  0px, transparent 70%);
 }
 
 a{

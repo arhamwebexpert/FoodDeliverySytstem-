@@ -1,31 +1,68 @@
-.food-display{
-    margin: 30px 0;
+.food-display {
+  margin: 30px 0;
 }
 
-.food-display h2{
-    font-size: max(2vw,24px);
-    font-weight: 600;
-    color: #333;
+.food-display h2 {
+  font-size: max(2vw, 24px);
+  font-weight: 600;
+  color: #333;
+  animation: fadeIn 0.5s ease both;
 }
 
-.food-display-list{
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(240px,1fr));
-    margin-top: 30px;
-    gap: 30px;
-    row-gap: 50px;
-}
-
-.food-display-loading,
-.food-display-error {
-    text-align: center;
-    padding: 40px;
-    font-size: 18px;
-    color: #666;
+.food-display-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  margin-top: 30px;
+  gap: 30px;
+  row-gap: 50px;
 }
 
 .food-display-error {
-    color: #dc3545;
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+  color: #dc3545;
+}
+
+.food-display-empty {
+  color: #999;
+  font-size: 16px;
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 40px 0;
+  animation: fadeIn 0.5s ease both;
+}
+
+/* Skeleton loading */
+.food-item-skeleton {
+  width: 100%;
+  border-radius: 18px;
+  height: 340px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+  opacity: 0;
+  animation: shimmer 1.4s ease-in-out infinite, skeletonFade 0.5s ease forwards;
+}
+
+@keyframes skeletonFade {
+  to { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .food-card {

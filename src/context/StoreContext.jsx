@@ -7,6 +7,17 @@ const StoreContextProvider = ({ children }) => {
     const [food_list, setFoodList] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [toasts, setToasts] = useState([]);
+
+    const showToast = (message, type = 'success') => {
+        const id = Date.now();
+        setToasts(prev => [...prev, { id, message, type }]);
+        setTimeout(() => setToasts(prev => prev.filter(t => t.id !== id)), 3200);
+    };
+
+    const removeToast = (id) => {
+        setToasts(prev => prev.filter(t => t.id !== id));
+    };
 
     // Fetch food items
     useEffect(() => {
@@ -93,15 +104,16 @@ const StoreContextProvider = ({ children }) => {
             }
 
             const data = await response.json();
-            // Update local cart state with the new cart data
             const cartItemsObj = data.items.reduce((acc, item) => {
                 acc[item.product._id] = item.quantity;
                 return acc;
             }, {});
             setCartItems(cartItemsObj);
+            const itemName = food_list.find(p => p._id === itemId)?.name;
+            showToast(itemName ? `${itemName} added to cart!` : 'Item added to cart!', 'success');
         } catch (err) {
             console.error('Error adding to cart:', err);
-            alert(err.message);
+            showToast(err.message, 'error');
         }
     };
 
@@ -128,7 +140,6 @@ const StoreContextProvider = ({ children }) => {
             }
 
             const data = await response.json();
-            // Update local cart state with the new cart data
             const cartItemsObj = data.items.reduce((acc, item) => {
                 acc[item.product._id] = item.quantity;
                 return acc;
@@ -136,7 +147,7 @@ const StoreContextProvider = ({ children }) => {
             setCartItems(cartItemsObj);
         } catch (err) {
             console.error('Error removing from cart:', err);
-            alert(err.message);
+            showToast(err.message, 'error');
         }
     };
 
@@ -165,7 +176,7 @@ const StoreContextProvider = ({ children }) => {
             setCartItems({});
         } catch (err) {
             console.error('Error clearing cart:', err);
-            alert(err.message);
+            showToast(err.message, 'error');
         }
     };
 
@@ -192,6 +203,8 @@ const StoreContextProvider = ({ children }) => {
         getTotalCartAmount,
         loading,
         error,
+        toasts,
+        removeToast,
     };
 
     return (
