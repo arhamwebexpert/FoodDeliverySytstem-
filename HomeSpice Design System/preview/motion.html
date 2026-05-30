@@ -1,0 +1,22 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_card.css">
+<style>
+  .motion { display:flex; gap:30px; flex-wrap:wrap; }
+  .m { display:flex; flex-direction:column; gap:10px; }
+  .track { width:230px; height:40px; background:var(--gray-100); border-radius:50px; position:relative; overflow:hidden; }
+  .ball { position:absolute; top:5px; left:5px; width:30px; height:30px; border-radius:50%; background:var(--coral-500); }
+  .b1 { animation: slide 2.4s var(--ease-out-soft) infinite; }
+  .b2 { animation: slide 2.4s var(--ease-overshoot) infinite; background:var(--tomato); }
+  @keyframes slide { 0%,15%{left:5px} 55%,75%{left:195px} 100%{left:5px} }
+  .nm { font-size:12px; font-weight:600; color:var(--ink-800); }
+  .vl { font-family:ui-monospace,Menlo,monospace; font-size:9.5px; color:var(--gray-400); }
+</style></head>
+<body><div class="card">
+  <div class="motion">
+    <div class="m"><div class="track"><div class="ball b1"></div></div><div class="nm">ease-out-soft</div><div class="vl">cubic-bezier(.23,1,.32,1)</div><div class="vl" style="color:var(--gray-450)">card settle · image zoom</div></div>
+    <div class="m"><div class="track"><div class="ball b2"></div></div><div class="nm">ease-overshoot</div><div class="vl">cubic-bezier(.175,.885,.32,1.275)</div><div class="vl" style="color:var(--gray-450)">pop · counter · toast in</div></div>
+  </div>
+  <div class="cap" style="margin-top:16px">Motion is playful &amp; bouncy. Entrances fade-up &amp; stagger (0.08s/card); add/remove buttons overshoot; order icons bounce on loop.</div>
+</div></body></html>

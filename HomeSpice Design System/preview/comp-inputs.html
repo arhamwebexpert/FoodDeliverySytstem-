@@ -1,0 +1,21 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_card.css">
+<style>
+  .form { display:flex; flex-direction:column; gap:14px; max-width:330px; }
+  .inp { outline:none; border:1px solid var(--gray-300); padding:11px 12px; border-radius:4px; font-size:14px; font-family:inherit; color:var(--ink-900); }
+  .inp::placeholder { color:var(--gray-350); }
+  .inp.focus { border-color:var(--tomato); box-shadow:0 0 0 1px var(--tomato); }
+  .row2 { display:flex; gap:12px; }
+  .check { display:flex; align-items:flex-start; gap:8px; font-size:13px; color:var(--gray-500); }
+</style></head>
+<body><div class="card">
+  <div class="form">
+    <input class="inp" placeholder="Your name">
+    <input class="inp focus" value="hello@homespice.com">
+    <div class="row2"><input class="inp" placeholder="City" style="flex:2"><input class="inp" placeholder="Zip" style="flex:1"></div>
+    <label class="check"><input type="checkbox" checked style="margin-top:3px;accent-color:#ff6347"> By continuing, I agree to the terms of use &amp; privacy policy.</label>
+  </div>
+  <div class="cap" style="margin-top:14px">Inputs: 1px #c9c9c9 border, 4px radius, tomato focus ring. Checkboxes use accent-color tomato.</div>
+</div></body></html>

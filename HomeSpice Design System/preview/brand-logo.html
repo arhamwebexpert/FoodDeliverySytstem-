@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_card.css">
+<style>
+  .card { display:flex; gap:0; padding:0; }
+  .half { flex:1; height:130px; display:flex; align-items:center; justify-content:center; }
+  .light { background:var(--cream); background-image:var(--page-gradient); }
+  .dark { background:var(--ink-900); }
+  .half img { width:150px; }
+  .tag { position:absolute; bottom:8px; font-size:10px; color:var(--gray-450); }
+  .light .tag { color:var(--gray-450); }
+  .dark .tag { color:rgba(255,255,255,.5); }
+  .half { position:relative; }
+</style></head>
+<body><div class="card">
+  <div class="half light"><img src="../assets/logo.png"><span class="tag">on cream page bg</span></div>
+  <div class="half dark"><img src="../assets/logo.png"><span class="tag">on ink-900 navbar (140px)</span></div>
+</div></body></html>

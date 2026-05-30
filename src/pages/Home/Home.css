@@ -117,35 +117,6 @@
     padding: 20px 0;
 }
 
-.app-download {
-    background: #1a1a1a;
-    padding: 50px 0;
-    margin: 50px 0;
-    border-radius: 10px;
-}
-
-.app-download h2 {
-    color: white;
-    text-align: center;
-    font-size: 36px;
-    margin-bottom: 30px;
-}
-
-.app-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.app-buttons img {
-    height: 50px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.app-buttons img:hover {
-    transform: translateY(-5px);
-}
 
 .contact-us {
     padding: 50px 0;

@@ -1,0 +1,30 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_card.css">
+<style>
+  .card { background:#faf7f4; display:flex; gap:24px; align-items:center; }
+  .food-item { width:240px; border-radius:18px; background:#fff; overflow:hidden; box-shadow:var(--shadow-food); }
+  .imgwrap { position:relative; }
+  .imgwrap img.food { width:100%; display:block; border-radius:18px 18px 0 0; }
+  .add { width:38px; position:absolute; bottom:15px; right:15px; border-radius:50%; box-shadow:var(--shadow-float); }
+  .counter { position:absolute; bottom:15px; right:15px; display:flex; align-items:center; gap:8px; padding:6px 10px; border-radius:50px; background:#fff; box-shadow:0 4px 18px rgba(0,0,0,.22); }
+  .counter img { width:28px; }
+  .counter .cv { font-size:15px; font-weight:700; color:var(--ink-900); min-width:18px; text-align:center; }
+  .info { padding:16px 20px 20px; }
+  .nr { display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; }
+  .nr p { font-size:18px; font-weight:600; color:var(--ink-900); }
+  .nr img { width:70px; }
+  .desc { color:var(--gray-400); font-size:12px; line-height:1.55; }
+  .price { color:var(--tomato); font-size:22px; font-weight:800; margin-top:10px; }
+</style></head>
+<body><div class="card">
+  <div class="food-item">
+    <div class="imgwrap"><img class="food" src="../assets/food/food_1.png" alt="Ceaser Salad"><img class="add" src="../assets/add_icon_white.png"></div>
+    <div class="info"><div class="nr"><p>Ceaser Salad</p><img src="../assets/rating_starts.png"></div><p class="desc">Food provides essential nutrients for overall health and well-being</p><p class="price">$12</p></div>
+  </div>
+  <div class="food-item">
+    <div class="imgwrap"><img class="food" src="../assets/food/food_5.png" alt="Lasagna Rolls"><div class="counter"><img src="../assets/remove_icon_red.png"><span class="cv">2</span><img src="../assets/add_icon_green.png"></div></div>
+    <div class="info"><div class="nr"><p>Lasagna Rolls</p><img src="../assets/rating_starts.png"></div><p class="desc">Food provides essential nutrients for overall health and well-being</p><p class="price">$14</p></div>
+  </div>
+</div></body></html>

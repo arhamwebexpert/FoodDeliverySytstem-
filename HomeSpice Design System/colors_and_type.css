@@ -1,0 +1,120 @@
+/* ============================================================
+   HomeSpice — Colors & Type Foundations
+   Source of truth: arhamwebexpert/FoodDeliverySytstem- (React/Vite)
+   Load Poppins before this file:
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+   ============================================================ */
+
+:root {
+  /* ---- Brand: Coral / Tomato ----------------------------------
+     The product leans on a warm coral-red across several near-shades.
+     These are consolidated into one ramp. --coral-500 is the primary. */
+  --coral-300: #ff8a8a;
+  --coral-400: #ff7a7a;
+  --coral-500: #ff6b6b;   /* PRIMARY — navbar accent, sign-in, scrollbar, dots */
+  --coral-600: #ff5252;   /* hover */
+  --coral-700: #ff3333;   /* pressed / active button state */
+  --tomato:    #ff6347;   /* accent — prices, active category ring, CTA buttons */
+  --tomato-soft: #ffe6e6; /* tinted error/promo surface */
+
+  /* ---- Ink / Neutrals ---------------------------------------- */
+  --ink-900: #1a1a1a;     /* navbar bg, primary text */
+  --ink-800: #262626;     /* headings */
+  --ink-700: #323232;     /* footer bg */
+  --ink-600: #333333;     /* body headings */
+  --gray-500: #666666;    /* secondary text */
+  --gray-450: #747474;    /* muted labels */
+  --gray-400: #888888;    /* tertiary / descriptions */
+  --gray-350: #999999;    /* placeholder / empty states */
+  --gray-300: #c9c9c9;    /* input borders */
+  --gray-200: #e2e2e2;    /* dividers (heavy) */
+  --gray-150: #eeeeee;    /* dividers (light) */
+  --gray-100: #f1f1f1;    /* scrollbar track */
+  --surface-50: #f8f9fa;  /* inset surfaces (order items, summaries) */
+  --white: #ffffff;
+
+  /* ---- Page background: warm cream + coral gradient blobs ----- */
+  --cream: #fdf8f4;
+  --page-bg: #fdf8f4;
+  --page-gradient:
+    radial-gradient(ellipse at 10% 10%, rgba(255, 107, 107, 0.18) 0px, transparent 55%),
+    radial-gradient(ellipse at 90% 5%,  rgba(255, 180, 80,  0.14) 0px, transparent 50%),
+    radial-gradient(ellipse at 80% 90%, rgba(255, 100, 60,  0.12) 0px, transparent 50%),
+    radial-gradient(ellipse at 5%  85%, rgba(255, 210, 150, 0.15) 0px, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(255, 240, 220, 0.40) 0px, transparent 70%);
+
+  /* ---- Semantic / status ------------------------------------- */
+  --success: #22c55e;
+  --success-700: #16a34a;
+  --success-ink: #28a745;
+  --error: #ef4444;
+  --error-700: #dc2626;
+  --error-ink: #dc3545;
+
+  /* Order status badges (bg / text) */
+  --status-pending-bg: #fff3cd;    --status-pending-fg: #856404;
+  --status-processing-bg: #cce5ff; --status-processing-fg: #004085;
+  --status-shipped-bg: #d4edda;    --status-shipped-fg: #155724;
+  --status-delivered-bg: #d1e7dd;  --status-delivered-fg: #0f5132;
+  --status-cancelled-bg: #f8d7da;  --status-cancelled-fg: #721c24;
+
+  /* ---- Typography -------------------------------------------- */
+  --font-sans: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-extrabold: 800;
+
+  /* Type scale (px) — pulled from component usage */
+  --fs-hero: 56px;     /* hero h2 (responsive: max(4.5vw,22px)) */
+  --fs-h1: 34px;       /* section "Explore our menu" */
+  --fs-h2: 30px;       /* page titles ("Place order") */
+  --fs-h3: 24px;       /* card section heads */
+  --fs-price: 22px;    /* food price */
+  --fs-lg: 18px;       /* nav items, food name */
+  --fs-body: 16px;     /* body */
+  --fs-sm: 14px;       /* form text, captions */
+  --fs-xs: 12px;       /* descriptions */
+
+  /* ---- Radii ------------------------------------------------- */
+  --radius-xs: 4px;    /* buttons, inputs, small chips */
+  --radius-sm: 8px;    /* cards, modals */
+  --radius-md: 12px;   /* elevated panels */
+  --radius-lg: 18px;   /* food cards */
+  --radius-pill: 50px; /* hero CTA, counters, status badges */
+  --radius-full: 50%;  /* circular menu thumbs, avatar dots */
+
+  /* ---- Elevation / shadows ----------------------------------- */
+  --shadow-navbar: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-card: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-food: 0 4px 16px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(0, 0, 0, 0.04);
+  --shadow-food-hover: 0 36px 70px rgba(0, 0, 0, 0.22), 0 14px 30px rgba(0, 0, 0, 0.14);
+  --shadow-pop: 0 8px 32px rgba(0, 0, 0, 0.18), 0 2px 8px rgba(0, 0, 0, 0.10);
+  --shadow-float: 0 4px 14px rgba(0, 0, 0, 0.30);
+
+  /* ---- Motion ------------------------------------------------ */
+  --ease-out-soft: cubic-bezier(0.23, 1, 0.32, 1);     /* card settle, image zoom */
+  --ease-overshoot: cubic-bezier(0.175, 0.885, 0.32, 1.275); /* pop / counter / toast */
+  --dur-fast: 0.2s;
+  --dur-base: 0.3s;
+  --dur-slow: 0.5s;
+}
+
+/* ============================================================
+   Semantic element defaults — opt in with class="hs-type"
+   ============================================================ */
+.hs-type {
+  font-family: var(--font-sans);
+  color: var(--ink-900);
+  -webkit-font-smoothing: antialiased;
+}
+.hs-type h1 { font-size: var(--fs-h1); font-weight: var(--weight-medium); color: var(--ink-800); letter-spacing: -0.01em; }
+.hs-type h2 { font-size: var(--fs-h2); font-weight: var(--weight-semibold); color: var(--ink-600); }
+.hs-type h3 { font-size: var(--fs-h3); font-weight: var(--weight-semibold); color: var(--ink-600); }
+.hs-type p  { font-size: var(--fs-body); font-weight: var(--weight-regular); color: var(--gray-500); line-height: 1.6; }
+.hs-type .muted { color: var(--gray-400); }
+.hs-type .price { color: var(--tomato); font-size: var(--fs-price); font-weight: var(--weight-extrabold); }
+.hs-type small { font-size: var(--fs-sm); color: var(--gray-450); }

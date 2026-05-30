@@ -1,0 +1,25 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_card.css">
+<style>
+  .grp { display:flex; gap:14px; align-items:center; flex-wrap:wrap; margin-bottom:14px; }
+  .btn-cta { border:none; color:#fff; background:var(--tomato); padding:14px 26px; border-radius:4px; font-size:16px; font-family:inherit; font-weight:500; }
+  .btn-pill { border:none; color:#000; background:#fff; font-weight:500; padding:13px 30px; border-radius:50px; font-size:15px; font-family:inherit; box-shadow:var(--shadow-card); }
+  .btn-coral { border:none; color:#fff; background:var(--coral-500); padding:8px 18px; border-radius:4px; font-size:14px; font-family:inherit; }
+  .btn-coral.hov { background:var(--coral-600); transform:translateY(-2px); }
+  .btn-disabled { border:none; color:#fff; background:#ccc; padding:14px 26px; border-radius:4px; font-size:16px; font-family:inherit; }
+  .tag { font-size:10px; color:var(--gray-400); display:block; margin-top:5px; }
+  .cell { display:flex; flex-direction:column; align-items:center; }
+</style></head>
+<body><div class="card">
+  <div class="grp">
+    <div class="cell"><button class="btn-cta">Place Order</button><span class="tag">primary CTA · tomato</span></div>
+    <div class="cell"><button class="btn-pill">View Menu</button><span class="tag">hero pill · white</span></div>
+  </div>
+  <div class="grp">
+    <div class="cell"><button class="btn-coral">Sign In</button><span class="tag">coral-500</span></div>
+    <div class="cell"><button class="btn-coral hov">Sign In</button><span class="tag">:hover — darker + lift 2px</span></div>
+    <div class="cell"><button class="btn-disabled">Place Order</button><span class="tag">:disabled — #ccc</span></div>
+  </div>
+</div></body></html>

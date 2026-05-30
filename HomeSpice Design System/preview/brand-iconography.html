@@ -1,0 +1,27 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_card.css">
+<style>
+  .card { background:var(--ink-900); }
+  .icons { display:flex; gap:26px; align-items:center; flex-wrap:wrap; }
+  .ic { display:flex; flex-direction:column; align-items:center; gap:8px; }
+  .ic img { width:26px; height:26px; object-fit:contain; }
+  .ic.inv img { filter:brightness(0) invert(1); }
+  .ic span { font-size:10px; color:rgba(255,255,255,.6); }
+  .note { color:rgba(255,255,255,.55); font-size:11px; margin-top:16px; }
+</style></head>
+<body><div class="card">
+  <div class="icons">
+    <div class="ic inv"><img src="../assets/search_icon.png"><span>search</span></div>
+    <div class="ic inv"><img src="../assets/basket_icon.png"><span>basket</span></div>
+    <div class="ic inv"><img src="../assets/profile_icon.png"><span>profile</span></div>
+    <div class="ic inv"><img src="../assets/bag_icon.png"><span>bag</span></div>
+    <div class="ic inv"><img src="../assets/parcel_icon.png"><span>parcel</span></div>
+    <div class="ic inv"><img src="../assets/logout_icon.png"><span>logout</span></div>
+    <div class="ic"><img src="../assets/add_icon_white.png"><span>add</span></div>
+    <div class="ic"><img src="../assets/add_icon_green.png"><span>add+</span></div>
+    <div class="ic"><img src="../assets/remove_icon_red.png"><span>remove</span></div>
+  </div>
+  <div class="note">Raster PNG icon set. On the dark navbar, monochrome glyphs are inverted via <code style="color:#ff8a8a">filter:brightness(0) invert(1)</code>. Add/remove counter icons are full-color.</div>
+</div></body></html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_card.css">
+<style>
+  .card { background:#faf7f4; }
+  .order { background:#fff; border-radius:8px; box-shadow:var(--shadow-card); padding:18px; }
+  .ohead { display:flex; justify-content:space-between; align-items:center; padding-bottom:14px; border-bottom:1px solid var(--gray-150); }
+  .oinfo { display:flex; gap:18px; align-items:center; }
+  .oid { font-weight:600; color:var(--ink-600); font-size:15px; }
+  .odate { color:var(--gray-500); font-size:13px; }
+  .badge { padding:4px 12px; border-radius:20px; font-size:13px; font-weight:500; background:#cce5ff; color:#004085; }
+  .oitem { display:flex; gap:14px; padding:12px; background:var(--surface-50); border-radius:4px; margin-top:14px; align-items:center; }
+  .oitem img { width:64px; height:64px; object-fit:cover; border-radius:4px; }
+  .oitem h4 { font-size:15px; color:var(--ink-600); margin-bottom:3px; }
+  .oitem p { font-size:13px; color:var(--gray-500); }
+  .otot { display:flex; justify-content:space-between; font-weight:600; color:var(--ink-600); margin-top:14px; font-size:15px; }
+</style></head>
+<body><div class="card">
+  <div class="order">
+    <div class="ohead"><div class="oinfo"><span class="oid">Order #A1042</span><span class="odate">May 28, 2026</span></div><span class="badge">Processing</span></div>
+    <div class="oitem"><img src="../assets/food/food_13.png"><div><h4>Chicken Sandwich</h4><p>Qty 1 · $12</p></div></div>
+    <div class="otot"><span>Total</span><span>$14.99</span></div>
+  </div>
+</div></body></html>

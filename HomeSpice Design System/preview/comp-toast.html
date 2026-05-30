@@ -1,0 +1,18 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_card.css">
+<style>
+  .card { background:#faf7f4; display:flex; gap:18px; flex-wrap:wrap; }
+  .toast { display:flex; align-items:center; gap:12px; padding:14px 18px; border-radius:14px; min-width:250px; box-shadow:var(--shadow-pop); color:#fff; }
+  .toast.s { background:linear-gradient(135deg,#22c55e 0%,#16a34a 100%); }
+  .toast.e { background:linear-gradient(135deg,#ef4444 0%,#dc2626 100%); }
+  .ico { font-size:20px; font-weight:700; min-width:26px; text-align:center; }
+  .msg { flex:1; font-size:14px; font-weight:500; }
+  .x { color:rgba(255,255,255,.75); font-size:22px; line-height:1; }
+</style></head>
+<body><div class="card">
+  <div class="toast s"><span class="ico">✓</span><span class="msg">Item added to cart</span><span class="x">×</span></div>
+  <div class="toast e"><span class="ico">!</span><span class="msg">Please sign in to continue</span><span class="x">×</span></div>
+  <div class="cap" style="width:100%;margin-top:2px">Toasts slide in from the right with overshoot, gradient fills, 14px radius. Top-right stack, auto-dismiss.</div>
+</div></body></html>

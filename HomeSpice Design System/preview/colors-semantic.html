@@ -1,0 +1,31 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_card.css">
+<style>
+  .badges { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:16px; }
+  .badge { padding:5px 14px; border-radius:20px; font-size:13px; font-weight:600; }
+  .sems { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
+  .sw { border-radius:9px; overflow:hidden; box-shadow:var(--shadow-card); }
+  .sw .chip { height:46px; display:flex; align-items:center; justify-content:center; color:#fff; font-size:12px; font-weight:600; }
+  .sw .meta { padding:6px 8px; background:#fff; }
+  .sw .name { font-size:11px; font-weight:600; color:var(--ink-800); }
+  .sw .hex { font-family:ui-monospace,Menlo,monospace; font-size:10px; color:var(--gray-400); }
+</style></head>
+<body><div class="card">
+  <div class="label" style="margin-bottom:8px">ORDER STATUS BADGES</div>
+  <div class="badges">
+    <span class="badge" style="background:#fff3cd;color:#856404">Pending</span>
+    <span class="badge" style="background:#cce5ff;color:#004085">Processing</span>
+    <span class="badge" style="background:#d4edda;color:#155724">Shipped</span>
+    <span class="badge" style="background:#d1e7dd;color:#0f5132">Delivered</span>
+    <span class="badge" style="background:#f8d7da;color:#721c24">Cancelled</span>
+  </div>
+  <div class="label" style="margin-bottom:8px">SUCCESS &amp; ERROR</div>
+  <div class="sems">
+    <div class="sw"><div class="chip" style="background:#22c55e">success</div><div class="meta"><div class="name">success</div><div class="hex">#22c55e</div></div></div>
+    <div class="sw"><div class="chip" style="background:#28a745">success-ink</div><div class="meta"><div class="name">success-ink</div><div class="hex">#28a745</div></div></div>
+    <div class="sw"><div class="chip" style="background:#ef4444">error</div><div class="meta"><div class="name">error</div><div class="hex">#ef4444</div></div></div>
+    <div class="sw"><div class="chip" style="background:#dc3545">error-ink</div><div class="meta"><div class="name">error-ink</div><div class="hex">#dc3545</div></div></div>
+  </div>
+</div></body></html>

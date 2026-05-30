@@ -1,0 +1,154 @@
+/* Wrapper handles entrance animation — separate from card so JS transform works freely */
+.food-item-wrapper {
+  animation: cardEntrance 0.65s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(36px) scale(0.93);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Card: no animation here — JS controls transform entirely */
+.food-item {
+  width: 100%;
+  border-radius: 18px;
+  background: #ffffff;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+  will-change: transform;
+  position: relative;
+}
+
+/* Glare overlay — moves with the mouse */
+.food-item-glare {
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 10;
+  transition: opacity 0.25s ease;
+}
+
+/* Image zoom on hover */
+.food-item-image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.food-item-image {
+  width: 100%;
+  border-radius: 18px 18px 0 0;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.food-item:hover .food-item-image {
+  transform: scale(1.07);
+}
+
+/* Add button */
+.food-item-image-container .add {
+  width: 38px;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.25s;
+  animation: fadeIn 0.3s ease forwards;
+  z-index: 5;
+}
+
+.food-item-image-container .add:hover {
+  transform: scale(1.28);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Counter */
+.food-item-counter {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 50px;
+  background: white;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.22);
+  animation: counterPop 0.36s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  z-index: 5;
+}
+
+.food-item-counter img {
+  width: 28px;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.food-item-counter img:hover {
+  transform: scale(1.25);
+}
+
+.counter-value {
+  font-size: 15px;
+  font-weight: 700;
+  min-width: 18px;
+  text-align: center;
+  color: #1a1a1a;
+  animation: countPop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+@keyframes counterPop {
+  from { opacity: 0; transform: scale(0.5) translateY(6px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes countPop {
+  from { transform: scale(0.3); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
+}
+
+/* Info */
+.food-item-info {
+  padding: 16px 20px 20px;
+}
+
+.food-item-name-rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.food-item-name-rating p {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.food-item-name-rating img {
+  width: 70px;
+}
+
+.food-item-desc {
+  color: #888;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.food-item-price {
+  color: tomato;
+  font-size: 22px;
+  font-weight: 800;
+  margin: 10px 0 0;
+}
