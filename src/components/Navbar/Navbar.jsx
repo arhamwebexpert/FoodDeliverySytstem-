@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react'
 import './Navbar.css'
+import { API_BASE_URL } from '../../config'
 import { assets } from '../../assets/assets'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { StoreContext } from '../../context/StoreContext';
@@ -21,7 +22,7 @@ const Navbar = ({ setShowLogin }) => {
                 return;
             }
 
-            const response = await fetch('http://localhost:5000/api/users/profile', {
+            const response = await fetch(`${API_BASE_URL}/api/users/profile`, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }

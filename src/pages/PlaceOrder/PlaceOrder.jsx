@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './PlaceOrder.css'
 import { StoreContext } from '../../context/StoreContext'
+import { API_BASE_URL } from '../../config'
 
 const PlaceOrder = () => {
   const { getTotalCartAmount, cartItems, clearCart } = useContext(StoreContext)
@@ -43,7 +44,7 @@ const PlaceOrder = () => {
       }
 
       // Create order
-      const response = await fetch('http://localhost:5000/api/orders', {
+      const response = await fetch(`${API_BASE_URL}/api/orders`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

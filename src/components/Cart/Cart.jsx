@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Cart.css';
+import { API_BASE_URL } from '../../config';
 
 const Cart = ({ isOpen, onClose }) => {
     const [cartItems, setCartItems] = useState([]);
@@ -22,7 +23,7 @@ const Cart = ({ isOpen, onClose }) => {
                 return;
             }
 
-            const response = await fetch('http://localhost:5000/api/cart', {
+            const response = await fetch(`${API_BASE_URL}/api/cart`, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -45,7 +46,7 @@ const Cart = ({ isOpen, onClose }) => {
     const updateQuantity = async (productId, newQuantity) => {
         try {
             const token = localStorage.getItem('token');
-            const response = await fetch(`http://localhost:5000/api/cart/update/${productId}`, {
+            const response = await fetch(`${API_BASE_URL}/api/cart/update/${productId}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -69,7 +70,7 @@ const Cart = ({ isOpen, onClose }) => {
     const removeItem = async (productId) => {
         try {
             const token = localStorage.getItem('token');
-            const response = await fetch(`http://localhost:5000/api/cart/remove/${productId}`, {
+            const response = await fetch(`${API_BASE_URL}/api/cart/remove/${productId}`, {
                 method: 'DELETE',
                 headers: {
                     'Authorization': `Bearer ${token}`

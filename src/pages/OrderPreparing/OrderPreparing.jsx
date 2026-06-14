@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import './OrderPreparing.css';
+import { API_BASE_URL } from '../../config';
 import { assets } from '../../assets/assets';
 import { StoreContext } from '../../context/StoreContext';
 import { useContext } from 'react';
@@ -23,7 +24,7 @@ const OrderPreparing = () => {
                     throw new Error('Please login to view order status');
                 }
 
-                const response = await fetch('http://localhost:5000/api/orders/latest', {
+                const response = await fetch(`${API_BASE_URL}/api/orders/latest`, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }

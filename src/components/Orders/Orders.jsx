@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Orders.css";
+import { API_BASE_URL } from '../../config';
 
 const Orders = () => {
     const [orders, setOrders] = useState([]);
@@ -17,7 +18,7 @@ const Orders = () => {
                 throw new Error("Please log in to view orders");
             }
 
-            const response = await fetch("http://localhost:5000/api/orders", {
+            const response = await fetch(`${API_BASE_URL}/api/orders`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -40,7 +41,7 @@ const Orders = () => {
         try {
             const token = localStorage.getItem("token");
             const response = await fetch(
-                `http://localhost:5000/api/orders/${orderId}/cancel`,
+                `${API_BASE_URL}/api/orders/${orderId}/cancel`,
                 {
                     method: "PUT",
                     headers: {

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Checkout.css";
+import { API_BASE_URL } from '../../config';
 
 const Checkout = ({ isOpen, onClose, cartItems, total }) => {
     const [formData, setFormData] = useState({
@@ -33,7 +34,7 @@ const Checkout = ({ isOpen, onClose, cartItems, total }) => {
             }
 
             // Create order
-            const response = await fetch("http://localhost:5000/api/orders", {
+            const response = await fetch(`${API_BASE_URL}/api/orders`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

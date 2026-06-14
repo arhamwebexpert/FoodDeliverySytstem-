@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './LoginPopup.css'
+import { API_BASE_URL } from '../../config'
 import { assets } from '../../assets/assets'
 
 const LoginPopup = ({ setShowLogin }) => {
@@ -37,8 +38,8 @@ const LoginPopup = ({ setShowLogin }) => {
 
     try {
       const endpoint = currState === "Sign Up"
-        ? 'http://localhost:5000/api/auth/register'
-        : 'http://localhost:5000/api/auth/login'
+        ? `${API_BASE_URL}/api/auth/register`
+        : `${API_BASE_URL}/api/auth/login`
 
       const response = await fetch(endpoint, {
         method: 'POST',

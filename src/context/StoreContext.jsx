@@ -1,4 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react';
+import { API_BASE_URL } from '../config';
 
 export const StoreContext = createContext(null);
 
@@ -23,7 +24,7 @@ const StoreContextProvider = ({ children }) => {
     useEffect(() => {
         const fetchFoodItems = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/products');
+                const response = await fetch(`${API_BASE_URL}/api/products`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch food items');
                 }
@@ -46,7 +47,7 @@ const StoreContextProvider = ({ children }) => {
                 const token = localStorage.getItem('token');
                 if (!token) return;
 
-                const response = await fetch('http://localhost:5000/api/cart', {
+                const response = await fetch(`${API_BASE_URL}/api/cart`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -83,7 +84,7 @@ const StoreContextProvider = ({ children }) => {
                 throw new Error('Please log in to add items to cart');
             }
 
-            const response = await fetch('http://localhost:5000/api/cart/add', {
+            const response = await fetch(`${API_BASE_URL}/api/cart/add`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -124,7 +125,7 @@ const StoreContextProvider = ({ children }) => {
                 throw new Error('Please log in to remove items from cart');
             }
 
-            const response = await fetch(`http://localhost:5000/api/cart/remove/${itemId}`, {
+            const response = await fetch(`${API_BASE_URL}/api/cart/remove/${itemId}`, {
                 method: 'DELETE',
                 headers: {
                     Authorization: `Bearer ${token}`,
@@ -158,7 +159,7 @@ const StoreContextProvider = ({ children }) => {
                 throw new Error('Please log in to clear cart');
             }
 
-            const response = await fetch('http://localhost:5000/api/cart/clear', {
+            const response = await fetch(`${API_BASE_URL}/api/cart/clear`, {
                 method: 'DELETE',
                 headers: {
                     Authorization: `Bearer ${token}`,
