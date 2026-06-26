@@ -19,10 +19,7 @@ app.use(express.json());
 
 // MongoDB Connection
 mongoose
-  .connect(
-    process.env.MONGODB_URI ||
-      "mongodb+srv://arhammehmood122_db_user:OxDqrhnNb4NiVAZS@cluster0.6ni9vlj.mongodb.net/introsocial?retryWrites=true&w=majority&appName=Cluster0",
-  )
+  .connect(process.env.MONGODB_URI)
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
